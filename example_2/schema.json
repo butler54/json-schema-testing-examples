@@ -1,0 +1,55 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://csrc.nist.gov/ns/oscal/1.0-schema.json",
+    "$comment": "OSCAL Implementation Target Format: JSON Schema",
+    "type": "object",
+    "definitions": {
+        "example-tle" : {
+            "title": "Example top level element.",
+            "description": "An example top level eelemtn that is a singleton. it contains properties that are defeined by additional parameters",
+            "type": "object",
+            "$id": "#/definitions/example-tle",
+            "minProperties": 2,
+            "properties": {
+                "id": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": 
+                  {
+                    "type": "object",
+                    "$ref": "#/definitions/example-element"
+                  },
+            "required": [
+                "id"
+            ]
+
+        },
+        "example-element": {
+            "title": "Example element",
+            "description": "Example element containing multiple attributes",
+            "$id": "#/definitions/example-element",
+            "properties": {
+                "id":{
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "value"
+            ]
+
+        }
+    },
+    "properties": {
+        "example-tle": {
+            "$ref": "#/definitions/example-tle"
+        }
+    },
+    "required": [
+        "example-tle"
+    ]
+}
