@@ -35,7 +35,11 @@
                 "value": {
                     "type": "string"
                 }
-            }
+            },
+            "required": [
+                "id",
+                "value"
+            ]
 
         }
     },

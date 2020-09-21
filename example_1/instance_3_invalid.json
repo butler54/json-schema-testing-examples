@@ -1,13 +1,12 @@
 {
     "example-tle": { 
-        "stuff": "var",
         "additional-var": {
             "id": "random string",
             "value": "random value string"
         },
         "different-var": {
             "id": "random string",
-            "value": "random value string"
+            "valusse": "random value string"
         }
     }
 }
