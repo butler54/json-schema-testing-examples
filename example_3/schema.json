@@ -9,20 +9,27 @@
             "description": "An example top level eelemtn that is a singleton. it contains properties that are defeined by additional parameters",
             "type": "object",
             "$id": "#/definitions/example-tle",
-            "minProperties": 1,
-            "additionalProperties": {
-                "allOf": [
-                  {
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "mid-level-element": {
+                    "title": "Title", 
+                    "description": "a whitty description.",
+                    "$id": "#/definitions/mid-level-element",
                     "type": "object",
-                    "$ref": "#/definitions/example-element"
-                  },
-                  {
-                    "not": {
-                      "type": "string"
-                    }
-                  }
-                ]
-            }
+                    "additionalProperties": 
+                          {
+                            "type": "object",
+                            "$ref": "#/definitions/example-element"
+                          }
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "additionalProperties": false
+
         },
         "example-element": {
             "title": "Example element",
